@@ -1,0 +1,390 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://anesbench.local/schemas/level_three_v3_en_agent.schema.json",
+  "title": "AnesBench Level Three Atomic Episode v3 English Agent",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "episode_id",
+    "data_source",
+    "procedure_name",
+    "task_group",
+    "task_name",
+    "answer_type",
+    "split",
+    "patient_information",
+    "question",
+    "turns"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "anesbench-level-three.atomic-episode.v3-en-agent"
+    },
+    "episode_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "data_source": {
+      "enum": [
+        "VitalDB_INSPIRE",
+        "Mover_EPIC"
+      ]
+    },
+    "task_group": {
+      "const": "perioperative_sequential_decision_making"
+    },
+    "task_name": {
+      "const": "atomic_episode"
+    },
+    "answer_type": {
+      "const": "structured_multiturn"
+    },
+    "split": {
+      "enum": [
+        "train",
+        "validation",
+        "test"
+      ]
+    },
+    "patient_information": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patient_profile",
+        "procedure_anesthesia_context"
+      ],
+      "properties": {
+        "patient_profile": {
+          "type": "string",
+          "minLength": 1
+        },
+        "procedure_anesthesia_context": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "question": {
+      "const": "Assess the current clinical state and provide the most appropriate intervention decision at this time."
+    },
+    "turns": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "turn_id",
+          "decision_point",
+          "input",
+          "answer"
+        ],
+        "properties": {
+          "turn_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "decision_point": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "ordinal",
+              "timeline_start",
+              "seconds_after_timeline_start",
+              "seconds_after_previous"
+            ],
+            "properties": {
+              "ordinal": {
+                "type": "string",
+                "pattern": "^T[0-4]$"
+              },
+              "timeline_start": {
+                "enum": [
+                  "operation_start",
+                  "anesthesia_start"
+                ]
+              },
+              "seconds_after_timeline_start": {
+                "type": "number",
+                "minimum": 0
+              },
+              "seconds_after_previous": {
+                "oneOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "number",
+                    "minimum": 0
+                  }
+                ]
+              }
+            }
+          },
+          "input": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "anesthesia_medication_state",
+              "vital_sign_trends",
+              "previous_intervention",
+              "visible_test_results"
+            ],
+            "properties": {
+              "anesthesia_medication_state": {
+                "type": "string",
+                "minLength": 1
+              },
+              "vital_sign_trends": {
+                "type": "string",
+                "minLength": 1
+              },
+              "previous_intervention": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "source_decision_point",
+                  "actions"
+                ],
+                "properties": {
+                  "source_decision_point": {
+                    "oneOf": [
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "string",
+                        "pattern": "^T[0-4]$"
+                      }
+                    ]
+                  },
+                  "actions": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              },
+              "visible_test_results": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "content"
+                ],
+                "properties": {
+                  "content": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "answer": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "state_assessment",
+              "acceptable_plans",
+              "natural_language_answer"
+            ],
+            "properties": {
+              "state_assessment": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "primary_problem",
+                  "severity",
+                  "key_evidence"
+                ],
+                "properties": {
+                  "primary_problem": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "severity": {
+                    "enum": [
+                      "Critical",
+                      "Severe",
+                      "Moderate",
+                      "Mild",
+                      "Stable",
+                      "Uncertain"
+                    ]
+                  },
+                  "key_evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              },
+              "acceptable_plans": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "actions"
+                  ],
+                  "properties": {
+                    "actions": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "action_types",
+                          "decision"
+                        ],
+                        "properties": {
+                          "action_types": {
+                            "type": "array",
+                            "minItems": 1,
+                            "uniqueItems": true,
+                            "items": {
+                              "enum": [
+                                "Airway_Procedure",
+                                "Blood_Product",
+                                "Bolus",
+                                "Device_Adjust",
+                                "Diagnostic_Check",
+                                "Do_Nothing_Observe",
+                                "Escalate",
+                                "Fluid_Admin",
+                                "Infusion_Adjust",
+                                "Infusion_Start",
+                                "Infusion_Stop"
+                              ]
+                            }
+                          },
+                          "decision": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "natural_language_answer": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "diagnosis",
+                  "specific_interventions"
+                ],
+                "properties": {
+                  "diagnosis": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^\\[Clinical Diagnosis\\]\\n.+\\n\\n\\[Diagnosis Evidence\\]\\n.+"
+                  },
+                  "specific_interventions": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "^\\[Specific Intervention\\]\\n.+"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "media": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "input_mode",
+              "images"
+            ],
+            "properties": {
+              "input_mode": {
+                "const": "paired_images"
+              },
+              "images": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "image_type",
+                    "path"
+                  ],
+                  "properties": {
+                    "image_type": {
+                      "enum": [
+                        "trend",
+                        "waveform_context"
+                      ]
+                    },
+                    "path": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "procedure_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "media": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "input_mode",
+        "images"
+      ],
+      "properties": {
+        "input_mode": {
+          "const": "paired_images"
+        },
+        "images": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "image_type",
+              "path"
+            ],
+            "properties": {
+              "image_type": {
+                "enum": [
+                  "trend",
+                  "waveform_context"
+                ]
+              },
+              "path": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
