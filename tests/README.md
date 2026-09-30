@@ -1,4 +1,4 @@
 # Tests moved
 
-Level-specific tests now live in `level1/tests`, `level2/tests`, and
-`level3/agent/tests`.
+Level-specific tests live in `benchmarks/perception/tests`,
+`benchmarks/single_point/tests`, and `benchmarks/multi_step/agent/tests`.

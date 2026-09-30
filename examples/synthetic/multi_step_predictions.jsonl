@@ -1,0 +1,3 @@
+{"episode_id":"synthetic-episode-001","turn_id":"synthetic-episode-001-T0","status":"ok","prediction":{"state_assessment":{"primary_problem":"No acute change."},"expert_recommendation":"Verify signal and observe."},"tool_calls":[],"model_calls":[]}
+{"episode_id":"synthetic-episode-001","turn_id":"synthetic-episode-001-T1","status":"ok","prediction":{"state_assessment":{"primary_problem":"Mild signal change."},"expert_recommendation":"Recheck signal and observe."},"tool_calls":[],"model_calls":[]}
+{"episode_id":"synthetic-episode-001","turn_id":"synthetic-episode-001-T2","status":"ok","prediction":{"state_assessment":{"primary_problem":"Signal returned to baseline."},"expert_recommendation":"Continue observation."},"tool_calls":[],"model_calls":[]}

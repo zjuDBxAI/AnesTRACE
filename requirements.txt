@@ -4,3 +4,5 @@ accelerate>=1.0
 kernels>=0.15.2,<0.16.0
 tqdm>=4.66
 pydantic>=2.7,<3
+pillow>=10
+opencv-python-headless>=4.9

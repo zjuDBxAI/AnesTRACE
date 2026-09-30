@@ -1,0 +1,2 @@
+{"instruction":"【Evaluation Turn-Level】Evaluate diagnosis and intervention at the current decision point.","system":"Use the separate public turn system prompt."}
+{"instruction":"【Evaluation Trajectory-Level】Evaluate evidence adaptation and management coherence across the episode.","system":"Use the separate public trajectory system prompt."}

@@ -1,0 +1,28 @@
+# AnesTRACE project website
+
+This directory is a dependency-free static site for GitHub Pages. It can be
+opened locally via `index.html`; no build step or API is required.
+
+The leaderboard in `leaderboard-data.js` transcribes the **published aggregate**
+results from Tables 3 and 4 of [arXiv:2609.32740v1](https://arxiv.org/pdf/2609.32740v1)
+(submitted September 26, 2026). Scores are a paper snapshot, not a live
+submission service. L1, L2, and L3 use different metrics and evaluation units;
+do not combine them into a cross-level rank. When updating the site, check
+every changed value against the public paper and update the version/date note.
+
+The overview image comes from the paper figure. Institution marks are from
+the [Zhejiang University standard emblem page](https://www.zju.edu.cn/514/listm.htm)
+and the [Second Affiliated Hospital official website](https://en.z2hospital.com/channels/852.html).
+Replace them with institution-approved files if required by local brand rules.
+The AnesTRACE project logo is stored as `assets/anestrace-primary-logo.png`.
+The arXiv, GitHub, and Hugging Face button icons are from
+[Simple Icons](https://simpleicons.org/) (CC0).
+
+No patient-level records or restricted source-derived benchmark files belong
+in this directory. The [data availability note](../data/README.md) explains
+the current nonrelease policy and team-run model-evaluation route.
+
+To publish, configure repository **Settings > Pages > Deploy from a branch**
+with branch `main` and folder `/docs`. The resulting project site is
+`https://zjudbxai.github.io/AnesTRACE/`. The GitHub repository URL itself
+continues to show the repository; it cannot be replaced by the Pages home.
