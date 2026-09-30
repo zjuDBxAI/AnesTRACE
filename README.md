@@ -15,17 +15,17 @@
   [![License: MIT](https://img.shields.io/badge/Code%20License-MIT-blue)](LICENSE)
 </div>
 
-## News
+## 🔥 News
 
 - **2026.09:** The [AnesTRACE preprint](https://arxiv.org/abs/2609.32740) was posted on arXiv.
 
-## Overview
+## 🩺 Overview
 
 AnesTRACE evaluates intraoperative perception, single-point anesthesia decisions, and multi-step decision updating on recorded clinical trajectories. AnesTRACE-Eval assesses open-ended decisions. The benchmark is for **research evaluation only**, not clinical use or deployment qualification.
 
 ![Overview of AnesTRACE](docs/assets/anestrace-overview-preview.png)
 
-## What We Release
+## 📦 What We Release
 
 This repository contains inference runners, the L3 tool-gated Agent, reference-based scoring interfaces, evaluator configuration, synthetic examples, and the project website. **Benchmark cases, patient records, gold answers, source-derived media, restricted knowledge corpora, and model weights are not included.** Synthetic scores demonstrate interfaces only; they are **not official benchmark scores**.
 
@@ -45,7 +45,7 @@ AnesTRACE/
 └── requirements.txt
 ```
 
-## Installation
+## ⚙️ Installation
 
 Python 3.10+ is required:
 
@@ -58,7 +58,7 @@ pip install -e 'benchmarks/multi_step/agent[test]'
 
 L1/L2 visual inference requires a compatible local checkpoint containing `config.json` and processor files. Video inference additionally requires `opencv-python`. The L3 Agent uses an OpenAI-compatible **local model server**; see the [Agent guide](benchmarks/multi_step/agent/README.md). API-compatible transport does not imply hosted API models are accepted for new submissions.
 
-## Inference
+## 🚀 Inference
 
 Provide an authorized input or use the artificial examples. Local model paths below are placeholders for checkpoints you control.
 
@@ -110,7 +110,7 @@ flowchart LR
 
 The environment replays recorded observations; a model recommendation does not change later patient states.
 
-## Evaluation
+## 📊 Evaluation
 
 Download the separately released evaluator checkpoint:
 
@@ -148,15 +148,15 @@ python -m unittest discover -s benchmarks/single_point/tests -v
 cd benchmarks/multi_step/agent && PYTHONPATH=src python -m pytest
 ```
 
-## Model Submission
+## 📩 Model Submission
 
 For private, team-run evaluation, contact **[ziweihuang@zju.edu.cn](mailto:ziweihuang@zju.edu.cn)**. Include the fixed model repository and revision, weight-access procedure, tokenizer/chat template, license, and hardware/runtime requirements. **Do not email weight files or post private weights, credentials, or patient data in GitHub Issues.** We currently accept only checkpoints executable locally in the team's environment; the team confirms feasibility before evaluation.
 
-## Data Availability
+## 🔒 Data Availability
 
 Benchmark data are **not currently provided**. See [data/README.md](data/README.md) for the release boundary and source-dataset terms.
 
-## Citation
+## 📝 Citation
 
 ```bibtex
 @misc{huang2026anestrace,
