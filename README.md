@@ -150,11 +150,11 @@ cd benchmarks/multi_step/agent && PYTHONPATH=src python -m pytest
 
 ## 📩 Model Submission
 
-For private, team-run evaluation, contact **[ziweihuang@zju.edu.cn](mailto:ziweihuang@zju.edu.cn)**. Include the fixed model repository and revision, weight-access procedure, tokenizer/chat template, license, and hardware/runtime requirements. **Do not email weight files or post private weights, credentials, or patient data in GitHub Issues.** We currently accept only checkpoints executable locally in the team's environment; the team confirms feasibility before evaluation.
+Request private, team-run evaluation through the **[model submission form](https://github.com/zjuDBxAI/AnesTRACE/issues/new?template=model-submission.yml)**. Provide a Hugging Face repository or cloud-storage download link, a fixed model revision, tokenizer/chat template, license, and hardware/runtime requirements. The form creates a public GitHub Issue; include only shareable links, not passwords, access tokens, restricted files, or patient data. We currently accept only checkpoints executable locally in the team's environment; the team confirms feasibility before evaluation.
 
 ## 🔒 Data Availability
 
-Benchmark data are **not currently provided**. See [data/README.md](data/README.md) for the release boundary and source-dataset terms.
+Benchmark data are **not released due to license issues**. See [data/README.md](data/README.md) for the release boundary and source-dataset terms.
 
 ## 📝 Citation
 

@@ -27,6 +27,11 @@ No patient-level records or restricted source-derived benchmark files belong
 in this directory. The [data availability note](../data/README.md) explains
 the current nonrelease policy and team-run model-evaluation route.
 
+The model-submission links open the GitHub Issue form defined in
+`../.github/ISSUE_TEMPLATE/model-submission.yml`. Publish that file on the
+repository's default branch and enable Issues to activate the form. Submissions
+are public and require a GitHub account; use shareable model links only.
+
 To publish, configure repository **Settings > Pages > Deploy from a branch**
 with branch `main` and folder `/docs`. The resulting project site is
 `https://zjudbxai.github.io/AnesTRACE/`. The GitHub repository URL itself

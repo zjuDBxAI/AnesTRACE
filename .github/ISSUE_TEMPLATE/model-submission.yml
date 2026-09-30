@@ -1,0 +1,82 @@
+name: Model evaluation request / 模型评测申请
+description: Submit a model link for team-run evaluation on AnesTRACE-Bench.
+title: "[Model submission] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit a fixed-version model that can run locally in the AnesTRACE team's environment.
+        Provide a Hugging Face repository or cloud-storage download link; do not upload weights here.
+
+        This submission creates a **public GitHub Issue**. Include shareable links only, without
+        passwords, access tokens, restricted files, or patient data. The team confirms feasibility
+        before running the private benchmark and follows up in this issue.
+
+        请提交可在团队环境本地运行的固定版本模型，并提供 Hugging Face 仓库或网盘下载链接。
+        申请会生成公开的 GitHub Issue，请勿填写密码、访问令牌、受限文件或患者数据。
+        团队确认运行条件后进行私有代测，并在此 Issue 中反馈。
+  - type: input
+    id: model-name
+    attributes:
+      label: Model name / 模型名称
+      placeholder: Organization / model-name
+    validations:
+      required: true
+  - type: input
+    id: model-url
+    attributes:
+      label: Hugging Face or cloud-storage URL / HF 或网盘地址
+      description: A shareable link to the model weights and configuration files.
+      placeholder: https://huggingface.co/organization/model-name
+    validations:
+      required: true
+  - type: input
+    id: model-revision
+    attributes:
+      label: Fixed version / 固定版本
+      description: Commit hash, release tag, or checkpoint version. For cloud storage, provide the archive checksum.
+      placeholder: Commit SHA or release tag; SHA-256 for an archive
+    validations:
+      required: true
+  - type: dropdown
+    id: evaluation-levels
+    attributes:
+      label: Requested evaluation levels / 申请评测层级
+      multiple: true
+      options:
+        - L1 - Intraoperative Perception / 术中感知
+        - L2 - Single-point Anesthesia Decision-Making / 单点麻醉决策
+        - L3 - Multi-step Anesthesia Decision-Making / 多步麻醉决策
+    validations:
+      required: true
+  - type: textarea
+    id: inference-setup
+    attributes:
+      label: Inference setup / 推理配置
+      description: Provide tokenizer, processor, chat template, dependencies, and recommended inference parameters.
+      placeholder: Configuration file links, installation steps, and example launch command
+    validations:
+      required: true
+  - type: input
+    id: model-license
+    attributes:
+      label: Model license / 模型许可证
+      description: Include the license name or a link to its terms.
+      placeholder: License name and URL
+    validations:
+      required: true
+  - type: textarea
+    id: runtime-requirements
+    attributes:
+      label: Hardware and runtime requirements / 硬件与运行需求
+      description: Model size, precision or quantization, GPU memory, and any special runtime requirements.
+      placeholder: Parameter count; precision; required GPU memory; runtime version
+    validations:
+      required: true
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: Additional notes / 补充说明
+      description: Optional public documentation links or relevant model details.
+    validations:
+      required: false
