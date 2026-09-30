@@ -150,7 +150,7 @@ cd benchmarks/multi_step/agent && PYTHONPATH=src python -m pytest
 
 ## Model Submission
 
-For private, team-run evaluation, contact **ziweihuang@zju.edu.cn**. This placeholder must be replaced before formal submissions open. Include the fixed model repository and revision, weight-access procedure, tokenizer/chat template, license, and hardware/runtime requirements. **Do not email weight files or post private weights, credentials, or patient data in GitHub Issues.** We currently accept only checkpoints executable locally in the team's environment; the team confirms feasibility before evaluation.
+For private, team-run evaluation, contact **[ziweihuang@zju.edu.cn](mailto:ziweihuang@zju.edu.cn)**. Include the fixed model repository and revision, weight-access procedure, tokenizer/chat template, license, and hardware/runtime requirements. **Do not email weight files or post private weights, credentials, or patient data in GitHub Issues.** We currently accept only checkpoints executable locally in the team's environment; the team confirms feasibility before evaluation.
 
 ## Data Availability
 
