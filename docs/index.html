@@ -6,6 +6,8 @@
     <meta name="theme-color" content="#f7faf8">
     <meta name="description" content="AnesTRACE benchmarks intraoperative anesthesia across multimodal perception, single-point decisions, and multi-step decision-making. Explore published results and the paper.">
     <link rel="canonical" href="https://zjudbxai.github.io/AnesTRACE/">
+    <link rel="alternate" hreflang="en" href="https://zjudbxai.github.io/AnesTRACE/">
+    <link rel="alternate" hreflang="zh-CN" href="https://zjudbxai.github.io/AnesTRACE/zh.html">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
     <script src="leaderboard-data.js" defer></script>
@@ -18,6 +20,7 @@
       <div class="shell header-inner">
         <a class="brand" href="#top" aria-label="AnesTRACE home"><img class="brand-image" src="assets/anestrace-primary-logo.png" alt="" width="1165" height="1067">Anes<span>TRACE</span></a>
         <nav class="site-nav" aria-label="Main navigation">
+          <a class="language-switch" href="zh.html" lang="zh-CN" hreflang="zh-CN" aria-label="Switch to Chinese">中文 <span aria-hidden="true">/ EN</span></a>
           <a href="#leaderboard">Leaderboard</a>
           <a href="#benchmark">Tasks</a>
           <a href="#evaluation">Evaluator</a>
@@ -35,16 +38,13 @@
           <p class="hero-description">An evaluation suite for how AI models perceive intraoperative evidence, recommend management at a decision point, and update decisions across recorded clinical trajectories.</p>
           <div class="hero-actions" aria-label="Paper resources">
             <a class="button button-primary" href="https://arxiv.org/pdf/2609.32740" target="_blank" rel="noopener noreferrer"><img class="button-icon" src="assets/anestrace-arxiv-icon.svg" alt="" width="24" height="24">Paper</a>
-            <a class="button button-outline" href="https://github.com/zjuDBxAI/AnesTRACE" target="_blank" rel="noopener noreferrer"><img class="button-icon" src="assets/anestrace-github-icon.svg" alt="" width="24" height="24">Code</a>
-            <a class="button button-eval" href="https://huggingface.co/DataXAI/AnesTRACE-Eval" target="_blank" rel="noopener noreferrer"><img class="button-icon" src="assets/anestrace-huggingface-icon.svg" alt="" width="24" height="24">AnesTRACE-Eval</a>
+            <a class="button button-primary" href="https://github.com/zjuDBxAI/AnesTRACE" target="_blank" rel="noopener noreferrer"><img class="button-icon" src="assets/anestrace-github-icon.svg" alt="" width="24" height="24">Code</a>
+            <a class="button button-primary" href="https://huggingface.co/DataXAI/AnesTRACE-Eval" target="_blank" rel="noopener noreferrer"><img class="button-icon button-icon-color" src="assets/anestrace-huggingface-icon.svg" alt="" width="24" height="24">AnesTRACE-Eval</a>
           </div>
-          <p class="authors"><span>Ziwei Huang<sup>1</sup></span><span>Qi Gao<sup>2</sup></span><span>Zhe Ji<sup>3,*</sup></span><span>Yuanyuan Yao<sup>2</sup></span><span>Fengjiang Zhang<sup>2</sup></span><span>Min Yan<sup>2</sup><span class="corresponding-icon" role="img" aria-label="Corresponding author">✉</span></span><span>Zhongle Xie<sup>1</sup><span class="corresponding-icon" role="img" aria-label="Corresponding author">✉</span></span><span>Gang Chen<sup>1</sup></span></p>
-          <p class="author-affiliations"><span><sup>1</sup> Zhejiang University</span><span><sup>2</sup> The Second Affiliated Hospital of Zhejiang University</span><span><sup>3</sup> Central South University</span></p>
-          <p class="author-note">* Work done while at Zhejiang University.</p>
           <div class="affiliations" aria-label="Research institutions">
-            <a class="affiliation affiliation-zju" href="https://www.zju.edu.cn/" target="_blank" rel="noopener noreferrer" title="Zhejiang University">
+            <a class="affiliation affiliation-zju" href="https://www.zju.edu.cn/" target="_blank" rel="noopener noreferrer" title="Zhejiang University · DataXAI Group">
               <img src="assets/zhejiang-university.png" alt="Zhejiang University emblem" width="318" height="253">
-              <span>Zhejiang University</span>
+              <span>Zhejiang University · DataXAI Group</span>
             </a>
             <span class="affiliation-divider" aria-hidden="true"></span>
             <a class="affiliation affiliation-sahzu" href="https://en.z2hospital.com/" target="_blank" rel="noopener noreferrer" title="The Second Affiliated Hospital of Zhejiang University">
@@ -63,13 +63,30 @@
         </div>
       </div>
 
+      <section class="section benchmark-section" id="benchmark" aria-labelledby="benchmark-heading">
+        <div class="shell">
+          <div class="section-heading narrow-heading">
+            <div><p class="section-kicker">The framework</p><h2 id="benchmark-heading">From observation to decision updating</h2></div>
+          </div>
+          <div class="level-grid">
+            <article class="level"><p class="level-number">01 / Perceive</p><h3>Intraoperative Perception</h3><p>Interpret TEE frames or videos and physiological waveforms or trends. Tasks include recognition, visual grounding, functional assessment, and anomaly perception.</p><span class="level-count">817 TEE QA · 1,000 waveform/trend QA</span></article>
+            <article class="level"><p class="level-number">02 / Decide</p><h3>Single-point Anesthesia Decision-Making</h3><p>Use a standardized representation of the clinical state at one decision point to assess risk, diagnose, select an intervention, and plan reassessment.</p><span class="level-count">493 anchors · 467 surgical cases</span></article>
+            <article class="level"><p class="level-number">03 / Update</p><h3>Multi-step Anesthesia Decision-Making</h3><p>Follow recorded episodes as states and documented intervention outcomes are revealed. Agents may seek information through bounded tools and episode memory.</p><span class="level-count">167 episodes · 517 turns · 124 cases</span></article>
+          </div>
+          <figure class="overview-figure">
+            <a href="assets/anestrace-overview.png" target="_blank" rel="noopener noreferrer" aria-label="Open the full-resolution AnesTRACE overview figure"><img src="assets/anestrace-overview-preview.png" alt="AnesTRACE overview showing the three benchmark levels, expert-reviewed data pipeline, and AnesTRACE-Eval" width="3000" height="1741"></a>
+            <figcaption>Overview of AnesTRACE-Bench and AnesTRACE-Eval. <a href="assets/anestrace-overview.png" target="_blank" rel="noopener noreferrer">Open full-size figure <span aria-hidden="true">↗</span></a></figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section class="section leaderboard-section" id="leaderboard" aria-labelledby="leaderboard-heading">
         <div class="shell">
           <div class="section-heading">
             <div>
               <p class="section-kicker">Published results</p>
-              <h2 id="leaderboard-heading">AnesTRACE-Bench leaderboard</h2>
-              <p class="section-intro">Explore the three evaluation settings separately. Scores are not directly comparable across levels. These published results include historical API-based models; new official submissions require locally executable weights.</p>
+              <h2 id="leaderboard-heading">LeaderBoard</h2>
+              <p class="section-intro">Explore the three-level evaluation setting. Scores are not directly comparable across levels. These published results include historical API-based models; new official submissions require locally executable weights.</p>
             </div>
             <a class="source-link" href="https://arxiv.org/pdf/2609.32740v1" target="_blank" rel="noopener noreferrer">arXiv v1 · Tables 3–4 <span aria-hidden="true">↗</span></a>
           </div>
@@ -95,23 +112,6 @@
         </div>
       </section>
 
-      <section class="section benchmark-section" id="benchmark" aria-labelledby="benchmark-heading">
-        <div class="shell">
-          <div class="section-heading narrow-heading">
-            <div><p class="section-kicker">The framework</p><h2 id="benchmark-heading">From observation to decision updating</h2></div>
-          </div>
-          <div class="level-grid">
-            <article class="level"><p class="level-number">01 / Perceive</p><h3>Intraoperative Perception</h3><p>Interpret TEE frames or videos and physiological waveforms or trends. Tasks include recognition, visual grounding, functional assessment, and anomaly perception.</p><span class="level-count">817 TEE QA · 1,000 waveform/trend QA</span></article>
-            <article class="level"><p class="level-number">02 / Decide</p><h3>Single-point Anesthesia Decision-Making</h3><p>Use a standardized representation of the clinical state at one decision point to assess risk, diagnose, select an intervention, and plan reassessment.</p><span class="level-count">493 anchors · 467 surgical cases</span></article>
-            <article class="level"><p class="level-number">03 / Update</p><h3>Multi-step Anesthesia Decision-Making</h3><p>Follow recorded episodes as states and documented intervention outcomes are revealed. Agents may seek information through bounded tools and episode memory.</p><span class="level-count">167 episodes · 517 turns · 124 cases</span></article>
-          </div>
-          <figure class="overview-figure">
-            <a href="assets/anestrace-overview.png" target="_blank" rel="noopener noreferrer" aria-label="Open the full-resolution AnesTRACE overview figure"><img src="assets/anestrace-overview-preview.png" alt="AnesTRACE overview showing the three benchmark levels, expert-reviewed data pipeline, and AnesTRACE-Eval" width="3000" height="1741"></a>
-            <figcaption>Overview of AnesTRACE-Bench and AnesTRACE-Eval. <a href="assets/anestrace-overview.png" target="_blank" rel="noopener noreferrer">Open full-size figure <span aria-hidden="true">↗</span></a></figcaption>
-          </figure>
-        </div>
-      </section>
-
       <section class="section findings-section" aria-labelledby="findings-heading">
         <div class="shell">
           <p class="section-kicker">What the evaluation reveals</p>
@@ -121,6 +121,12 @@
             <div class="finding"><span class="finding-number">17.5<span class="finding-unit">%</span></span><h3>Safety errors remain</h3><p>The highest-scoring multi-step model still has major or critical errors among safety-assessed intervention responses.</p></div>
             <div class="finding"><span class="finding-number">74.3<span class="finding-unit"> s</span></span><h3>Quality has a time cost</h3><p>The best turn-level decision quality comes with substantial p95 response latency under the paper's inference configuration.</p></div>
           </div>
+          <figure class="case-study-figure">
+            <div class="case-study-scroll" tabindex="0" role="region" aria-label="Scrollable multi-step case study">
+              <a href="assets/representative-l3-evaluation-trajectory.png" target="_blank" rel="noopener noreferrer" aria-label="Open the full-resolution multi-step case study"><img src="assets/representative-l3-evaluation-trajectory.png" alt="Representative DeepSeek-V4-Pro episode showing observed evidence, model decisions, and AnesTRACE-Eval judgments across three decision points" width="3628" height="3808" loading="lazy"></a>
+            </div>
+            <figcaption>A representative multi-step episode: observed evidence, model decisions, and AnesTRACE-Eval judgments. <a href="assets/representative-l3-evaluation-trajectory.png" target="_blank" rel="noopener noreferrer">Open full-size figure <span aria-hidden="true">↗</span></a></figcaption>
+          </figure>
         </div>
       </section>
 

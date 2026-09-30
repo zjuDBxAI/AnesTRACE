@@ -3,6 +3,11 @@
 This directory is a dependency-free static site for GitHub Pages. It can be
 opened locally via `index.html`; no build step or API is required.
 
+`index.html` is the English page and `zh.html` is the Chinese page. The navigation
+language switch links the two pages and preserves the current section. Both use
+the same `leaderboard-data.js`, with localized table labels in `app.js`.
+Keep both pages in sync when changing shared content or section order.
+
 The leaderboard in `leaderboard-data.js` transcribes the **published aggregate**
 results from Tables 3 and 4 of [arXiv:2609.32740v1](https://arxiv.org/pdf/2609.32740v1)
 (submitted September 26, 2026). Scores are a paper snapshot, not a live
@@ -10,7 +15,7 @@ submission service. L1, L2, and L3 use different metrics and evaluation units;
 do not combine them into a cross-level rank. When updating the site, check
 every changed value against the public paper and update the version/date note.
 
-The overview image comes from the paper figure. Institution marks are from
+The overview and representative multi-step case-study images come from the paper figures. Institution marks are from
 the [Zhejiang University standard emblem page](https://www.zju.edu.cn/514/listm.htm)
 and the [Second Affiliated Hospital official website](https://en.z2hospital.com/channels/852.html).
 Replace them with institution-approved files if required by local brand rules.
