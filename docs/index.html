@@ -18,77 +18,104 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="shell header-inner">
-        <a class="brand" href="#top" aria-label="AnesTRACE home"><img class="brand-image" src="assets/anestrace-primary-logo.png" alt="" width="1165" height="1067">Anes<span>TRACE</span></a>
+        <a class="brand" href="#top" aria-label="AnesTRACE home"><img class="brand-image" src="assets/anestrace-primary-logo.webp" alt="" width="384" height="352">Anes<span>TRACE</span></a>
         <nav class="site-nav" aria-label="Main navigation">
           <a class="language-switch" href="zh.html" lang="zh-CN" hreflang="zh-CN" aria-label="Switch to Chinese">中文 <span aria-hidden="true">/ EN</span></a>
-          <a href="#leaderboard">Leaderboard</a>
-          <a href="#benchmark">Tasks</a>
-          <a href="#evaluation">Evaluator</a>
-          <a href="#access">Access</a>
+          <a href="#benchmark">Tasks & case</a>
+          <a href="#leaderboard">Results</a>
+          <a href="#evidence">Evidence & limits</a>
+          <a href="#access">Participate</a>
         </nav>
         <a class="header-code" href="https://github.com/zjuDBxAI/AnesTRACE" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
       </div>
     </header>
 
     <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-heading">
+<section class="hero" id="top" aria-labelledby="hero-heading">
         <div class="shell hero-inner">
-          <h1 id="hero-heading"><img class="hero-logo" src="assets/anestrace-primary-logo.png" alt="AnesTRACE" width="1165" height="1067"></h1>
+          <h1 id="hero-heading"><img class="hero-logo" src="assets/anestrace-primary-logo.webp" alt="AnesTRACE" width="384" height="352"></h1>
           <p class="paper-title">Benchmarking Intraoperative Anesthesia from Multimodal Perception to Multi-step Decision-Making</p>
-          <p class="hero-description">An evaluation suite for how AI models perceive intraoperative evidence, recommend management at a decision point, and update decisions across recorded clinical trajectories.</p>
-          <div class="hero-actions" aria-label="Paper resources">
-            <a class="button button-primary" href="https://arxiv.org/pdf/2609.32740" target="_blank" rel="noopener noreferrer"><img class="button-icon" src="assets/anestrace-arxiv-icon.svg" alt="" width="24" height="24">Paper</a>
-            <a class="button button-primary" href="https://github.com/zjuDBxAI/AnesTRACE" target="_blank" rel="noopener noreferrer"><img class="button-icon" src="assets/anestrace-github-icon.svg" alt="" width="24" height="24">Code</a>
-            <a class="button button-primary" href="https://huggingface.co/DataXAI/AnesTRACE-Eval" target="_blank" rel="noopener noreferrer"><img class="button-icon button-icon-color" src="assets/anestrace-huggingface-icon.svg" alt="" width="24" height="24">AnesTRACE-Eval</a>
+          <p class="hero-description">Evaluate AI models/agents on intraoperative perception, anesthesia decisions and decision updating.</p>
+          <p class="research-label">Multimodal perception · Multi-step decisions · Anesthesiologist-aligned evaluation</p>
+          <div class="hero-actions" aria-label="Project resources">
+            <a class="button button-outline" href="https://arxiv.org/pdf/2609.32740v1" target="_blank" rel="noopener noreferrer"><img class="button-icon" src="assets/anestrace-arxiv-icon.svg" alt="" width="24" height="24">Paper</a>
+            <a class="button button-outline" href="https://github.com/zjuDBxAI/AnesTRACE" target="_blank" rel="noopener noreferrer"><img class="button-icon" src="assets/anestrace-github-icon.svg" alt="" width="24" height="24">Code</a>
+            <a class="button button-outline" href="https://huggingface.co/DataXAI/AnesTRACE-Eval" target="_blank" rel="noopener noreferrer"><img class="button-icon button-icon-color" src="assets/anestrace-huggingface-icon.svg" alt="" width="24" height="24">AnesTRACE-Eval</a>
           </div>
           <div class="affiliations" aria-label="Research institutions">
-            <a class="affiliation affiliation-zju" href="https://www.zju.edu.cn/" target="_blank" rel="noopener noreferrer" title="Zhejiang University · DataXAI Group">
-              <img src="assets/zhejiang-university.png" alt="Zhejiang University emblem" width="318" height="253">
+            <a class="affiliation affiliation-zju" href="https://www.nbdataxai.com/" target="_blank" rel="noopener noreferrer" title="Zhejiang University · DataXAI Group">
+              <img src="assets/zhejiang-university-emblem.webp" alt="Zhejiang University emblem" width="128" height="128">
               <span>Zhejiang University · DataXAI Group</span>
             </a>
             <span class="affiliation-divider" aria-hidden="true"></span>
-            <a class="affiliation affiliation-sahzu" href="https://en.z2hospital.com/" target="_blank" rel="noopener noreferrer" title="The Second Affiliated Hospital of Zhejiang University">
-              <img class="hospital-emblem" src="assets/Zhe.jpg" alt="The Second Affiliated Hospital of Zhejiang University emblem" width="800" height="800">
-              <span>The Second Affiliated Hospital of Zhejiang University</span>
+            <a class="affiliation affiliation-sahzu" href="https://en.z2hospital.com/" target="_blank" rel="noopener noreferrer" title="The Second Affiliated Hospital of Zhejiang University · Department of Anesthesiology">
+              <img class="hospital-emblem" src="assets/sahzu-emblem.webp" alt="The Second Affiliated Hospital of Zhejiang University emblem" width="128" height="128">
+              <span>The Second Affiliated Hospital of Zhejiang University · Department of Anesthesiology</span>
             </a>
           </div>
         </div>
       </section>
 
-      <div class="facts-band" aria-label="Benchmark size">
-        <div class="shell facts-grid">
-          <div class="fact"><span class="fact-value">1,817</span><span class="fact-label">Perception QA instances</span></div>
-          <div class="fact"><span class="fact-value">493</span><span class="fact-label">Single-point decision anchors</span></div>
-          <div class="fact"><span class="fact-value">167 <small>/ 517</small></span><span class="fact-label">Multi-step episodes / turns</span></div>
-        </div>
-      </div>
+<div class="facts-band" aria-label="Benchmark units"><div class="shell facts-grid">
+      <div class="fact"><span class="fact-value">1,817</span><span class="fact-label">Intraoperative Perception questions<small>817 TEE · 1,000 waveform / trend</small></span></div>
+      <div class="fact"><span class="fact-value">493</span><span class="fact-label">Clinical decision anchors<small>Single-point decisions · 467 surgical cases</small></span></div>
+      <div class="fact"><span class="fact-value">167</span><span class="fact-label">Multi-step episodes<small>517 decision turns · 124 surgical cases</small></span></div>
+    </div></div>
 
-      <section class="section benchmark-section" id="benchmark" aria-labelledby="benchmark-heading">
-        <div class="shell">
-          <div class="section-heading narrow-heading">
-            <div><p class="section-kicker">The framework</p><h2 id="benchmark-heading">From observation to decision updating</h2></div>
-          </div>
-          <div class="level-grid">
-            <article class="level"><p class="level-number">01 / Perceive</p><h3>Intraoperative Perception</h3><p>Interpret TEE frames or videos and physiological waveforms or trends. Tasks include recognition, visual grounding, functional assessment, and anomaly perception.</p><span class="level-count">817 TEE QA · 1,000 waveform/trend QA</span></article>
-            <article class="level"><p class="level-number">02 / Decide</p><h3>Single-point Anesthesia Decision-Making</h3><p>Use a standardized representation of the clinical state at one decision point to assess risk, diagnose, select an intervention, and plan reassessment.</p><span class="level-count">493 anchors · 467 surgical cases</span></article>
-            <article class="level"><p class="level-number">03 / Update</p><h3>Multi-step Anesthesia Decision-Making</h3><p>Follow recorded episodes as states and documented intervention outcomes are revealed. Agents may seek information through bounded tools and episode memory.</p><span class="level-count">167 episodes · 517 turns · 124 cases</span></article>
-          </div>
-          <figure class="overview-figure">
-            <a href="assets/anestrace-overview.png" target="_blank" rel="noopener noreferrer" aria-label="Open the full-resolution AnesTRACE overview figure"><img src="assets/anestrace-overview-preview.png" alt="AnesTRACE overview showing the three benchmark levels, expert-reviewed data pipeline, and AnesTRACE-Eval" width="3000" height="1741"></a>
+<section class="section benchmark-section" id="benchmark" aria-labelledby="benchmark-heading">
+  <div class="shell">
+    <div class="section-heading"><div><p class="section-kicker">The evaluation settings</p><h2 id="benchmark-heading">Interpret, diagnose, update</h2><p class="section-intro">Three complementary settings with different input representations, information access and temporal scopes.</p></div><a class="text-link" href="https://arxiv.org/pdf/2609.32740v1#page=4" target="_blank" rel="noopener noreferrer">§3–4 ↗</a></div>
+    <div class="level-grid"><article class="level"><p class="level-number">L1</p><h3>Intraoperative Perception</h3><p class="level-subtitle">Read visible evidence</p><dl class="task-flow"><dt>Input</dt><dd>Transesophageal echocardiography (TEE) images / videos, physiological waveforms or trend plots.</dd><dt>Response</dt><dd>Recognition, visual grounding, functional assessment, value extraction, and trend / anomaly interpretation.</dd><dt>Assessment</dt><dd>Task-specific accuracy, mIoU or F1 metrics.</dd></dl><span class="level-count">817 TEE · 1,000 waveform / trend questions</span></article><article class="level"><p class="level-number">L2</p><h3>Single-point Anesthesia Decision-Making</h3><p class="level-subtitle">Diagnosis at a single decision point</p><dl class="task-flow"><dt>Input</dt><dd>A standardized patient state available up to the decision time, including historical trends where provided.</dd><dt>Response</dt><dd>Case-grounded risk assessment, diagnosis, intervention and reassessment plans, with an evidence-based rationale.</dd><dt>Assessment</dt><dd>AnesTRACE-Eval assesses open-ended responses; safety labels are reported separately.</dd></dl><span class="level-count">493 anchors · 467 surgical cases</span></article><article class="level"><p class="level-number">L3</p><h3>Multi-step Anesthesia Decision-Making</h3><p class="level-subtitle">Ongoing intraoperative diagnosis</p><dl class="task-flow"><dt>Input</dt><dd>Patient states and recorded intervention outcomes revealed over time; the agent may request information through bounded tools.</dd><dt>Response</dt><dd>Acquire case evidence, explain the evidence-based rationale, and update management across successive decision times.</dd><dt>Assessment</dt><dd>Assess quality and safety per turn, and Temporal Consistency per complete episode.</dd></dl><span class="level-count">167 episodes · 517 decision turns</span></article></div>
+    <aside class="evidence-sources"><div><h3>Evidence-based knowledge support</h3><p class="source-tags"><span>Miller’s Anesthesia</span><span>Clinical guidelines</span><span>Drug information</span><span>PubMed literature</span></p><p>L3 agents can retrieve relevant knowledge on demand to support diagnosis and management alongside current case evidence.</p></div><a class="text-link" href="https://arxiv.org/pdf/2609.32740v1#page=26" target="_blank" rel="noopener noreferrer">Retrieval tools · Table 14 ↗</a></aside>
+    <details class="technical-details"><summary>View the full framework</summary><figure class="overview-figure">
+            <a href="assets/anestrace-overview.png" target="_blank" rel="noopener noreferrer" aria-label="Open the full-resolution AnesTRACE overview figure"><img src="assets/anestrace-overview-1200.webp" srcset="assets/anestrace-overview-1200.webp 1200w, assets/anestrace-overview-2400.webp 2400w" sizes="(max-width: 720px) calc(100vw - 32px), (max-width: 1400px) calc(100vw - 80px), 1320px" loading="lazy" decoding="async" alt="AnesTRACE overview showing the three benchmark levels, expert-reviewed data pipeline, and AnesTRACE-Eval" width="2400" height="1393"></a>
             <figcaption>Overview of AnesTRACE-Bench and AnesTRACE-Eval. <a href="assets/anestrace-overview.png" target="_blank" rel="noopener noreferrer">Open full-size figure <span aria-hidden="true">↗</span></a></figcaption>
-          </figure>
-        </div>
-      </section>
+          </figure></details>
+  </div>
+</section>
 
-      <section class="section leaderboard-section" id="leaderboard" aria-labelledby="leaderboard-heading">
+<section class="section case-section" id="case-study" aria-labelledby="case-study-heading">
+  <div class="shell">
+    <div class="section-heading"><div><p class="section-kicker">Case analysis</p><h2 id="case-study-heading">One episode, three decision times</h2><p class="section-intro">Three decision turns during donor nephrectomy · DeepSeek-V4-Pro with the full agent framework. </p></div><a class="text-link" href="https://arxiv.org/pdf/2609.32740v1#page=33" target="_blank" rel="noopener noreferrer">Appendix G · Figure 10 ↗</a></div>
+    <p class="replay-note">Trajectory replay: later patient states and intervention outcomes come from existing case records; model recommendations do not change subsequent patient states.</p><div class="case-timeline"><article class="case-turn"><div class="time-marker">T0</div><div class="turn-content"><h3>Pressure decrease with bradycardia</h3><div class="turn-grid">
+      <div class="case-evidence"><h4>Available evidence</h4><p class="measurements">MAP 67–69 mmHg · HR 49 bpm</p></div>
+      <div><h4>Model response summary</h4><p>The model described mild hypotension, proposed cautious fluids and conditional vasopressor use, and recommended observing the response.</p></div>
+      <div class="case-judgment"><h4>AnesTRACE-Eval assessment</h4><p>The assessment noted that concurrent bradycardia was not explicitly addressed; Clinical Correctness, Evidence Grounding and Task Completeness had localized defects.</p><span class="safety-label neutral">Safety label: safe</span></div>
+      </div></div></article><article class="case-turn"><div class="time-marker">T1</div><div class="turn-content"><h3>Recorded pressure has recovered</h3><div class="turn-grid">
+      <div class="case-evidence"><h4>Available evidence</h4><p class="measurements">MAP 101 mmHg</p></div>
+      <div><h4>Model response summary</h4><p>The model proposed observation and resuming remifentanil if MAP exceeded 105–110 mmHg. </p></div>
+      <div class="case-judgment"><h4>AnesTRACE-Eval assessment</h4><p>The assessment judged the proposed threshold high, with a potential treatment delay; diagnosis and intervention retained localized correctness and grounding defects.</p><span class="safety-label concern">Safety label: minor</span></div>
+      </div></div></article><article class="case-turn"><div class="time-marker">T2</div><div class="turn-content"><h3>Pressure recovery and trend monitoring</h3><div class="turn-grid">
+      <div class="case-evidence"><h4>Available evidence</h4><p class="measurements">MAP 78 mmHg · End-tidal CO₂ (EtCO₂) trend</p></div>
+      <div><h4>Model response summary</h4><p>The model proposed continued observation and ventilation adjustment if EtCO₂ continued to rise.</p></div>
+      <div class="case-judgment"><h4>AnesTRACE-Eval assessment</h4><p>The assessment recognized management updating after pressure recovery, but noted that the diagnosis still described hypotension.</p><span class="safety-label neutral">Safety label: safe</span></div>
+      </div></div></article></div><div class="case-takeaway"><strong>Local defects and overall performance</strong><p>Evidence adaptation and management coherence both received 2/2, while T1 still carried a minor safety concern.</p><p class="case-note">A safe label means no safety concern was assigned in this assessment; it does not establish complete correctness or clinical usability.</p></div>
+    <details class="technical-details"><summary>View the original figure and detailed scores</summary><figure class="case-study-figure">
+            <div class="case-study-scroll" tabindex="0" role="region" aria-label="Scrollable multi-step case study">
+              <a href="assets/representative-l3-evaluation-trajectory.png" target="_blank" rel="noopener noreferrer" aria-label="Open the full-resolution multi-step case study"><img src="assets/representative-l3-1040.webp" srcset="assets/representative-l3-1040.webp 1040w, assets/representative-l3-2080.webp 2080w" sizes="(max-width: 720px) 680px, (max-width: 1120px) calc(100vw - 80px), 1040px" decoding="async" alt="Representative DeepSeek-V4-Pro episode showing observed evidence, model decisions, and AnesTRACE-Eval judgments across three decision points" width="2080" height="2183" loading="lazy"></a>
+            </div>
+            <figcaption>A representative multi-step episode: observed evidence, model decisions, and AnesTRACE-Eval judgments. <a href="assets/representative-l3-evaluation-trajectory.png" target="_blank" rel="noopener noreferrer">Open full-size figure <span aria-hidden="true">↗</span></a></figcaption>
+          </figure></details>
+  </div>
+</section>
+
+<section class="section findings-section" id="findings" aria-labelledby="findings-heading">
+  <div class="shell">
+    <div class="section-heading"><div><p class="section-kicker">Key findings</p><h2 id="findings-heading">Read quality, safety and latency together</h2><p class="section-intro">Reported results; no single score establishes clinical usability.</p></div><a class="text-link" href="https://arxiv.org/pdf/2609.32740v1#page=7" target="_blank" rel="noopener noreferrer">Tables 3–4 ↗</a></div>
+    <div class="findings-grid"><article class="finding"><span class="finding-number">32.2<span class="finding-unit"> mIoU</span></span><h3>Fine-grained visual grounding remains limited</h3><p>GPT-6-Astra’s TEE visual-grounding mIoU, the highest value in that column of Table 3. mIoU measures predicted–annotated region overlap; it is not clinical diagnostic accuracy.</p></article><article class="finding"><span class="finding-number">17.5<span class="finding-unit"> %</span></span><h3>High average quality still coexists with serious safety errors</h3><p>GPT-6-Astra’s L3 Major/Critical Safety Error Rate. The denominator includes intervention responses with valid safety labels; this is not a patient adverse-event rate.</p></article><article class="finding"><span class="finding-number">74.3<span class="finding-unit"> s</span></span><h3>Response latency needs separate assessment</h3><p>The same model’s L3 p95 latency: approximately 95% of valid timed turns were at or below this value. It sums model-request and tool-execution time per turn; it is neither an episode duration nor an operating-room response guarantee.</p></article></div>
+
+  </div>
+</section>
+
+<section class="section leaderboard-section" id="leaderboard" aria-labelledby="leaderboard-heading">
         <div class="shell">
           <div class="section-heading">
             <div>
               <p class="section-kicker">Published results</p>
-              <h2 id="leaderboard-heading">LeaderBoard</h2>
+              <h2 id="leaderboard-heading">Model evaluation results</h2>
               <p class="section-intro">Explore the three-level evaluation setting. Scores are not directly comparable across levels. These published results include historical API-based models; new official submissions require locally executable weights.</p>
             </div>
-            <a class="source-link" href="https://arxiv.org/pdf/2609.32740v1" target="_blank" rel="noopener noreferrer">arXiv v1 · Tables 3–4 <span aria-hidden="true">↗</span></a>
+            <a class="source-link" href="https://arxiv.org/pdf/2609.32740v1" target="_blank" rel="noopener noreferrer">2026-09-26 · arXiv v1 · Tables 3–4 <span aria-hidden="true">↗</span></a>
           </div>
 
           <div class="leaderboard-controls">
@@ -102,47 +129,40 @@
               <label class="field" for="category-filter"><span>Model category</span><select id="category-filter"><option value="all">All categories</option><option value="proprietary">Proprietary</option><option value="general">General-purpose</option><option value="medical">Medical-domain</option></select></label>
             </div>
           </div>
+          <div class="sort-shortcuts" aria-label="Sorting shortcuts"><span>Compare by</span><button type="button" data-sort="quality" aria-pressed="true">Task quality</button><button type="button" data-sort="safety" aria-pressed="false">Safety Error ↓</button><button type="button" data-sort="latency" aria-pressed="false">p95 latency ↓</button></div>
           <div id="leaderboard-panel" role="tabpanel" aria-labelledby="tab-perception">
             <div class="table-meta"><p id="table-context" aria-live="polite"></p><p id="table-count" aria-live="polite"></p></div>
+            <p class="scroll-hint">Scroll horizontally for all metrics; click a column heading to sort. Arrows show the current sort direction.</p>
             <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable leaderboard table">
               <table id="leaderboard-table"><caption class="sr-only">Published AnesTRACE-Bench model results</caption><thead></thead><tbody></tbody></table>
             </div>
-            <p class="table-footnote" id="table-footnote"></p>
+            <p class="table-footnote" id="table-footnote"></p><details class="metric-guide"><summary>What do these metrics mean?</summary><dl class="metric-definitions"><div><dt>Quality score</dt><dd>Ordinal 0/1/2 judgments on non-safety dimensions normalized to 0–100; not answer accuracy.</dd></div><div><dt>Safety error rate</dt><dd>The share of valid safety-assessed responses labeled major or critical. Missing or failed assessments are excluded.</dd></div><div><dt>Temporal consistency</dt><dd>Evaluated across a complete clinical episode.</dd></div><div><dt>Evidence acquisition</dt><dd>An exploratory automatic-matching proxy, not a physician-validated measure of necessary evidence.</dd></div></dl></details>
           </div>
         </div>
       </section>
 
-      <section class="section findings-section" aria-labelledby="findings-heading">
-        <div class="shell">
-          <p class="section-kicker">What the evaluation reveals</p>
-          <h2 id="findings-heading">Strong averages leave important gaps</h2>
-          <div class="findings-grid">
-            <div class="finding"><span class="finding-number">32.2<span class="finding-unit"> mIoU</span></span><h3>Fine-grained perception</h3><p>The highest reported TEE visual-grounding score remains limited, even when models perform better on basic recognition.</p></div>
-            <div class="finding"><span class="finding-number">17.5<span class="finding-unit">%</span></span><h3>Safety errors remain</h3><p>The highest-scoring multi-step model still has major or critical errors among safety-assessed intervention responses.</p></div>
-            <div class="finding"><span class="finding-number">74.3<span class="finding-unit"> s</span></span><h3>Quality has a time cost</h3><p>The best turn-level decision quality comes with substantial p95 response latency under the paper's inference configuration.</p></div>
-          </div>
-          <figure class="case-study-figure">
-            <div class="case-study-scroll" tabindex="0" role="region" aria-label="Scrollable multi-step case study">
-              <a href="assets/representative-l3-evaluation-trajectory.png" target="_blank" rel="noopener noreferrer" aria-label="Open the full-resolution multi-step case study"><img src="assets/representative-l3-evaluation-trajectory.png" alt="Representative DeepSeek-V4-Pro episode showing observed evidence, model decisions, and AnesTRACE-Eval judgments across three decision points" width="3628" height="3808" loading="lazy"></a>
-            </div>
-            <figcaption>A representative multi-step episode: observed evidence, model decisions, and AnesTRACE-Eval judgments. <a href="assets/representative-l3-evaluation-trajectory.png" target="_blank" rel="noopener noreferrer">Open full-size figure <span aria-hidden="true">↗</span></a></figcaption>
-          </figure>
-        </div>
-      </section>
+<section class="section eval-section" id="evaluation" aria-labelledby="evaluation-heading">
+  <div class="shell">
+    <div class="section-heading"><div><p class="section-kicker">How open-ended responses are assessed</p><h2 id="evaluation-heading">AnesTRACE-Eval</h2><p class="section-intro">AnesTRACE-Eval uses case facts and expert references, supported by retrieved passages from Miller’s Anesthesia, ASA guidance, pharmacological references and related literature. Patient-specific evidence available at the decision point remains primary.</p></div><a class="text-link" href="https://arxiv.org/pdf/2609.32740v1#page=6" target="_blank" rel="noopener noreferrer">§5 · Appendix B.3 ↗</a></div>
+    <dl class="dimension-list"><div><dt>Clinical Correctness</dt><dd>Are conclusions, severity and management appropriate?</dd></div><div><dt>Evidence Grounding</dt><dd>Are judgments supported by evidence available at decision time?</dd></div><div><dt>Task Completeness</dt><dd>Does the response cover the required content and plan?</dd></div><div><dt>Safety</dt><dd>Separate safe / minor / major / critical labels.</dd></div><div><dt>Temporal Consistency</dt><dd>L3: do later decisions appropriately incorporate new evidence and recorded intervention outcomes?</dd></div></dl>
 
-      <section class="section eval-section" id="evaluation" aria-labelledby="evaluation-heading">
-        <div class="shell eval-layout">
-          <div><p class="section-kicker">Open-ended response evaluation</p><h2 id="evaluation-heading">AnesTRACE-Eval</h2><p>Clinical management can admit more than one acceptable plan. AnesTRACE-Eval uses anesthesiologist-defined atomic criteria and a trained evaluator to judge responses against the information available at the decision time.</p><a class="text-link" href="https://arxiv.org/pdf/2609.32740" target="_blank" rel="noopener noreferrer">Read the evaluation protocol <span aria-hidden="true">↗</span></a></div>
-          <div class="eval-dimensions" aria-label="Evaluation dimensions"><span>Clinical Correctness</span><span>Evidence Grounding</span><span>Task Completeness</span><span>Safety</span><span>Temporal Consistency <small>multi-step</small></span></div>
-        </div>
-      </section>
+  </div>
+</section>
 
-      <section class="section access-section" id="access" aria-labelledby="access-heading">
+<section class="section evidence-section" id="evidence" aria-labelledby="evidence-heading">
+  <div class="shell">
+    <div class="section-heading"><div><p class="section-kicker">For clinical teams</p><h2 id="evidence-heading">Evidence and limits</h2><p class="section-intro">Assess the case sources, expert review, evaluator validation and evidence that has not yet been established.</p></div><a class="text-link" href="https://arxiv.org/pdf/2609.32740v1#page=10" target="_blank" rel="noopener noreferrer">§4–5 · Conclusion ↗</a></div>
+    <div class="evidence-grid"><article class="evidence-card"><h3>Data and coverage</h3><p>Data come from VitalDB, MOVER, INSPIRE and EchoNet-TEE, with alignment, evidence-sufficiency, temporal and artifact checks before expert review. Selected retrospective cases do not represent every procedure or high-risk setting.</p></article><article class="evidence-card"><h3>Clinical expert review</h3><p>Models assist candidate generation; anesthesiologists review clinical relevance, correctness, decision-time evidence, anchor validity and evidence sufficiency. References relying on future information are removed.</p></article><article class="evidence-card"><h3>Evaluator–anesthesiologist agreement</h3><p>Validation includes 100 L2 responses and 117 L3 decision-turn responses from 39 episodes. Three anesthesiologists share the annotation workload. Agreement is measured by correlation.</p></article><article class="evidence-card"><h3>Training and validation boundary</h3><p>The domain-specific evaluator starts from Qwen3.5-9B, using approximately 7,000 expert-reviewed SFT examples and 4,000 expert-ranked DPO pairs. Training and benchmark cases overlap by design; responses from the validation generators are excluded from training. Agreement does not establish generalization to unseen clinical cases.</p></article></div><div class="limits-note"><strong>What the results support</strong><p>The results identify perception, response-quality, safety and decision-updating defects in the defined tasks. They do not establish improved patient outcomes from executing model recommendations or safe operating-room deployment. Unrepresented settings, unseen-case generalization and prospective workflow validation remain boundaries.</p></div>
+
+  </div>
+</section>
+
+<section class="section access-section" id="access" aria-labelledby="access-heading">
         <div class="shell access-layout">
           <div>
             <p class="section-kicker">Model evaluation</p>
             <h2 id="access-heading">Evaluate your model on AnesTRACE-Bench</h2>
-            <p>Our inference code, agent framework, and evaluation tools are publicly available. To request evaluation on AnesTRACE-Bench, submit your model's Hugging Face repository or cloud-storage link through the <a href="https://github.com/zjuDBxAI/AnesTRACE/issues/new?template=model-submission.yml" target="_blank" rel="noopener noreferrer">model submission form</a>. The team evaluates fixed-version model weights locally on the private benchmark. Benchmark data are not released due to license issues.</p>
+            <p>Our inference code, agent framework, and evaluation tools are publicly available. To request evaluation on AnesTRACE-Bench, submit your model's Hugging Face repository or cloud-storage link through the <a href="https://github.com/zjuDBxAI/AnesTRACE/issues/new?template=model-submission.yml" target="_blank" rel="noopener noreferrer">model submission form</a>. The team evaluates fixed-version model weights locally on the private benchmark. Benchmark data are not released due to license issues.</p><p class="participation-note">Clinical teams can review the case, protocol and evidence boundaries to assess the study design. The current public route supports model submissions; there is no public benchmark-data request process. Submissions are public GitHub Issues: do not upload case records, patient information, passwords or access tokens.</p>
           </div>
           <div class="access-links">
             <a href="https://github.com/zjuDBxAI/AnesTRACE/issues/new?template=model-submission.yml" target="_blank" rel="noopener noreferrer">Submit a model <span aria-hidden="true">↗</span></a>
@@ -152,7 +172,7 @@
         </div>
       </section>
 
-      <section class="section citation-section" id="citation" aria-labelledby="citation-heading">
+<section class="section citation-section" id="citation" aria-labelledby="citation-heading">
         <div class="shell"><div class="citation-heading"><div><p class="section-kicker">Reference</p><h2 id="citation-heading">Cite AnesTRACE</h2></div><button id="copy-citation" class="button button-outline" type="button">Copy BibTeX</button></div><pre id="bibtex"><code>@misc{huang2026anestrace,
   title={AnesTRACE: Benchmarking Intraoperative Anesthesia from Multimodal Perception to Multi-step Decision-Making},
   author={Ziwei Huang and Qi Gao and Zhe Ji and Yuanyuan Yao and Fengjiang Zhang and Min Yan and Zhongle Xie and Gang Chen},
@@ -165,6 +185,6 @@
       </section>
     </main>
 
-    <footer class="site-footer"><div class="shell footer-inner"><div><strong>AnesTRACE</strong><p>Research evaluation only. Not a clinical decision system or a substitute for professional medical judgment.</p></div><a href="#top">Back to top ↑</a></div></footer>
+    <footer class="site-footer"><div class="shell footer-inner"><div><strong>AnesTRACE</strong><p>Research evaluation only. Not a clinical decision system or a substitute for professional medical judgment.</p><p class="contact-email">Contact: <a href="mailto:xiezl@zju.edu.cn">xiezl@zju.edu.cn</a></p></div><a href="#top">Back to top ↑</a></div></footer>
   </body>
 </html>

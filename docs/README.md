@@ -8,6 +8,13 @@ language switch links the two pages and preserves the current section. Both use
 the same `leaderboard-data.js`, with localized table labels in `app.js`.
 Keep both pages in sync when changing shared content or section order.
 
+The clinical reading flow is tasks → worked case → key findings → model results
+→ evaluation protocol → evidence and limitations → participation and citation.
+Paper figures are available in native expandable details; the case summary uses
+responsive text cards. See `content-sources.md` for the evidence map and limits.
+Result tables provide quality, Safety Error and latency sorting shortcuts. L1
+has no Safety Error or latency columns, so those shortcuts are disabled there.
+
 The leaderboard in `leaderboard-data.js` transcribes the **published aggregate**
 results from Tables 3 and 4 of [arXiv:2609.32740v1](https://arxiv.org/pdf/2609.32740v1)
 (submitted September 26, 2026). Scores are a paper snapshot, not a live
@@ -26,6 +33,14 @@ The arXiv, GitHub, and Hugging Face button icons are from
 No patient-level records or restricted source-derived benchmark files belong
 in this directory. The [data availability note](../data/README.md) explains
 the current nonrelease policy and team-run model-evaluation route.
+
+The pages load WebP derivatives, with responsive figure variants and lazy
+loading. Full-resolution PNG figures remain available through the figure links.
+Institution emblems share a 42px square display size with outer white margins
+trimmed from the derivatives. Regenerate these files with
+`python docs/optimize_assets.py` (requires Pillow); original files are preserved.
+For a local preview, run `python -m http.server 8765 --bind 127.0.0.1 --directory docs`
+from the repository root and open `http://127.0.0.1:8765/`.
 
 The model-submission links open the GitHub Issue form defined in
 `../.github/ISSUE_TEMPLATE/model-submission.yml`. Publish that file on the

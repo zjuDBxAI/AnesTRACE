@@ -30,3 +30,4 @@ benchmarks/multi_step/agent/outputs/
 *.bin
 *.sqlite
 *.sqlite3
+preview-server*.log
